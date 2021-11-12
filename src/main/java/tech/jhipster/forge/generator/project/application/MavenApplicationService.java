@@ -1,12 +1,12 @@
-package tech.jhipster.forge.generator.buildtool.maven.application;
+package tech.jhipster.forge.generator.project.application;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
-import tech.jhipster.forge.generator.buildtool.maven.domain.MavenService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.service.buildtool.maven.MavenService;
 
 @Service
 public class MavenApplicationService {
@@ -43,9 +43,5 @@ public class MavenApplicationService {
 
   public void addPomXml(Project project) {
     mavenService.addPomXml(project);
-  }
-
-  public void addMavenWrapper(Project project) {
-    mavenService.addMavenWrapper(project);
   }
 }

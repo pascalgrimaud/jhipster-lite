@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.error.domain.GeneratorException;
-import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
@@ -29,7 +29,6 @@ class SpringBootApplicationServiceIT {
     project.addConfig("springBootVersion", "2.5.3");
     initApplicationService.init(project);
     mavenApplicationService.addPomXml(project);
-    mavenApplicationService.addMavenWrapper(project);
 
     springBootApplicationService.init(project);
 

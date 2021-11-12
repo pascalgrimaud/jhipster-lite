@@ -2,10 +2,10 @@ package tech.jhipster.forge.generator.server.springboot.database.postgresql.appl
 
 import static tech.jhipster.forge.TestUtils.*;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
-import static tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService.POM_XML;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.*;
 import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.BASE_NAME;
 import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.PACKAGE_NAME;
+import static tech.jhipster.forge.generator.project.infrastructure.secondary.buildtool.maven.MavenLocalRepository.POM_XML;
 import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.APPLICATION_PROPERTIES;
 
 import java.util.List;
@@ -13,8 +13,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
-import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;
 
@@ -37,7 +37,7 @@ class PostgresqlApplicationServiceIT {
   void shouldInit() {
     Project project = tmpProject();
     initApplicationService.init(project);
-    mavenApplicationService.addPomXml(project);
+    mavenApplicationService.init(project);
     springBootApplicationService.init(project);
 
     postgresqlApplicationService.init(project);

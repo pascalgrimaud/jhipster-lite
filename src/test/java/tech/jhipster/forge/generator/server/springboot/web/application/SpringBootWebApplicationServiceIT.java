@@ -11,8 +11,8 @@ import static tech.jhipster.forge.generator.server.springboot.web.application.Sp
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
-import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;
 

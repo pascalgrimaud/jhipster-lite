@@ -1,17 +1,14 @@
-package tech.jhipster.forge.generator.buildtool.maven.domain.maven;
+package tech.jhipster.forge.generator.project.domain.service.buildtool.maven;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static tech.jhipster.forge.TestUtils.tmpProject;
 import static tech.jhipster.forge.TestUtils.tmpProjectWithPomXml;
 
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tech.jhipster.forge.UnitTest;
@@ -20,23 +17,17 @@ import tech.jhipster.forge.error.domain.GeneratorException;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
-import tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
-import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)
 class MavenDomainServiceTest {
 
   @Mock
-  ProjectRepository projectRepository;
+  MavenRepository mavenRepository;
 
+  @InjectMocks
   MavenDomainService mavenDomainService;
-
-  @BeforeEach
-  void setUp() {
-    mavenDomainService = new MavenDomainService(projectRepository);
-  }
 
   @Test
   void shouldAddParent() throws Exception {
@@ -45,7 +36,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addParent(project, parent);
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addParent(project, parent);
   }
 
   @Test
@@ -64,7 +55,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addDependency(project, dependency);
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addDependency(project, dependency);
   }
 
   @Test
@@ -79,7 +70,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addDependency(project, dependency);
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addDependency(project, dependency);
   }
 
   @Test
@@ -94,7 +85,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addDependency(project, dependency, List.of(dependencyToExclude));
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addDependency(project, dependency, List.of(dependencyToExclude));
   }
 
   @Test
@@ -107,13 +98,28 @@ class MavenDomainServiceTest {
   }
 
   @Test
+  void shouldNotAddDependencyWithExclusionsWhenNoPomXml() throws Exception {
+    Project project = tmpProject();
+    FileUtils.createFolder(project.getFolder());
+    Dependency dependency = Dependency.builder().groupId("org.springframework.boot").artifactId("spring-boot-starter").build();
+    Dependency dependencyToExclude = Dependency
+      .builder()
+      .groupId("org.springframework.boot")
+      .artifactId("spring-boot-starter-tomcat")
+      .build();
+
+    assertThatThrownBy(() -> mavenDomainService.addDependency(project, dependency, List.of(dependencyToExclude)))
+      .isExactlyInstanceOf(GeneratorException.class);
+  }
+
+  @Test
   void shouldAddPlugin() throws Exception {
     Project project = tmpProjectWithPomXml();
     Plugin plugin = Plugin.builder().groupId("org.springframework.boot").artifactId("spring-boot-maven-plugin").build();
 
     mavenDomainService.addPlugin(project, plugin);
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addPlugin(project, plugin);
   }
 
   @Test
@@ -131,7 +137,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addProperty(project, "testcontainers", "1.16.0");
 
-    verify(projectRepository).write(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addProperty(project, "testcontainers", "1.16.0");
   }
 
   @Test
@@ -149,8 +155,7 @@ class MavenDomainServiceTest {
 
     mavenDomainService.init(project);
 
-    verify(projectRepository).template(any(Project.class), anyString(), anyString());
-    verify(projectRepository, times(3)).add(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).init(project);
   }
 
   @Test
@@ -159,15 +164,6 @@ class MavenDomainServiceTest {
 
     mavenDomainService.addPomXml(project);
 
-    verify(projectRepository).template(any(Project.class), anyString(), anyString());
-  }
-
-  @Test
-  void shouldAddMavenWrapper() {
-    Project project = tmpProject();
-
-    mavenDomainService.addMavenWrapper(project);
-
-    verify(projectRepository, times(3)).add(any(Project.class), anyString(), anyString(), anyString());
+    verify(mavenRepository).addPomXml(project);
   }
 }

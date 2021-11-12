@@ -1,13 +1,14 @@
-package tech.jhipster.forge.generator.buildtool.maven.domain;
+package tech.jhipster.forge.generator.project.infrastructure.secondary.buildtool.maven;
 
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.read;
 import static tech.jhipster.forge.common.domain.WordUtils.indent;
-import static tech.jhipster.forge.generator.buildtool.maven.domain.Maven.*;
 import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.*;
+import static tech.jhipster.forge.generator.project.domain.service.buildtool.maven.Maven.*;
 
 import java.io.IOException;
 import java.util.List;
+import org.springframework.stereotype.Repository;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.common.domain.WordUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
@@ -16,15 +17,18 @@ import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.service.buildtool.maven.Maven;
+import tech.jhipster.forge.generator.project.domain.service.buildtool.maven.MavenRepository;
 
-public class MavenDomainService implements MavenService {
+@Repository
+public class MavenLocalRepository implements MavenRepository {
 
   public static final String SOURCE = "buildtool/maven";
   public static final String POM_XML = "pom.xml";
 
   private final ProjectRepository projectRepository;
 
-  public MavenDomainService(ProjectRepository projectRepository) {
+  public MavenLocalRepository(ProjectRepository projectRepository) {
     this.projectRepository = projectRepository;
   }
 

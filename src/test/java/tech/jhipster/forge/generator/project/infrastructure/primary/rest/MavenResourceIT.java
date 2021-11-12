@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.buildtool.maven.infrastructure.primary.rest;
+package tech.jhipster.forge.generator.project.infrastructure.primary.rest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,46 +42,5 @@ class MavenResourceIT {
     Project project = ProjectDTO.toProject(projectDTO);
     assertFilesMaven(project);
     assertFileContent(project, "pom.xml", List.of("<groupId>tech.jhipster.chips</groupId>", "<artifactId>chips</artifactId>"));
-  }
-
-  @Test
-  void shouldAddPomXml() throws Exception {
-    ProjectDTO projectDTO = TestUtils.readFileToObject("json/chips.json", ProjectDTO.class);
-    if (projectDTO == null) {
-      throw new GeneratorException("Error when reading file");
-    }
-    projectDTO.folder(FileUtils.tmpDirForTest());
-
-    mockMvc
-      .perform(
-        post("/api/build-tools/maven/pom-xml")
-          .contentType(MediaType.APPLICATION_JSON)
-          .content(TestUtils.convertObjectToJsonBytes(projectDTO))
-      )
-      .andExpect(status().isOk());
-
-    Project project = ProjectDTO.toProject(projectDTO);
-    assertFilesPomXml(project);
-    assertFileContent(project, "pom.xml", List.of("<groupId>tech.jhipster.chips</groupId>", "<artifactId>chips</artifactId>"));
-  }
-
-  @Test
-  void shouldAddMavenWrapper() throws Exception {
-    ProjectDTO projectDTO = TestUtils.readFileToObject("json/chips.json", ProjectDTO.class);
-    if (projectDTO == null) {
-      throw new GeneratorException("Error when reading file");
-    }
-    projectDTO.folder(FileUtils.tmpDirForTest());
-
-    mockMvc
-      .perform(
-        post("/api/build-tools/maven/wrapper")
-          .contentType(MediaType.APPLICATION_JSON)
-          .content(TestUtils.convertObjectToJsonBytes(projectDTO))
-      )
-      .andExpect(status().isOk());
-
-    Project project = ProjectDTO.toProject(projectDTO);
-    assertFilesMavenWrapper(project);
   }
 }

@@ -3,7 +3,7 @@ package tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.in
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static tech.jhipster.forge.TestUtils.assertFileContent;
-import static tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService.POM_XML;
+import static tech.jhipster.forge.generator.project.infrastructure.secondary.buildtool.maven.MavenLocalRepository.POM_XML;
 import static tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application.LiquibaseAssertFiles.assertFilesLiquibaseChangelogMasterXml;
 import static tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application.LiquibaseAssertFiles.assertFilesLiquibaseJava;
 
@@ -17,8 +17,8 @@ import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.TestUtils;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
-import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.application.MavenApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.infrastructure.primary.dto.ProjectDTO;
 import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;

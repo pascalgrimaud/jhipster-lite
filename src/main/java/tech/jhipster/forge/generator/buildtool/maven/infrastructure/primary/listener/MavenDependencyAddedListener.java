@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.stereotype.Component;
 import tech.jhipster.forge.generator.buildtool.generic.domain.DependencyAdded;
-import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
+import tech.jhipster.forge.generator.project.application.MavenApplicationService;
 
 @Component
 public class MavenDependencyAddedListener implements ApplicationListener<PayloadApplicationEvent<DependencyAdded>> {

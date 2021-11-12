@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.buildtool.maven.domain;
+package tech.jhipster.forge.generator.project.domain.service.buildtool.maven;
 
 import java.util.List;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
@@ -14,7 +14,5 @@ public interface MavenService {
   void addProperty(Project project, String key, String version);
 
   void init(Project project);
-
   void addPomXml(Project project);
-  void addMavenWrapper(Project project);
 }

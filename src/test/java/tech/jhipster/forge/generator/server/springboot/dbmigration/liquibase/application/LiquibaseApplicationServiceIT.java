@@ -1,7 +1,7 @@
 package tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application;
 
 import static tech.jhipster.forge.TestUtils.*;
-import static tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService.POM_XML;
+import static tech.jhipster.forge.generator.project.infrastructure.secondary.buildtool.maven.MavenLocalRepository.POM_XML;
 import static tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application.LiquibaseAssertFiles.assertFilesLiquibaseChangelogMasterXml;
 import static tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application.LiquibaseAssertFiles.assertFilesLiquibaseJava;
 
