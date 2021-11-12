@@ -78,15 +78,23 @@ public class TestUtils {
     return Project.builder().folder(FileUtils.tmpDirForTest()).build();
   }
 
-  public static Project tmpProjectWithPomXml() throws IOException {
+  public static Project tmpProjectWithPomXml() {
     Project project = tmpProject();
-    copyPomXml(project);
+    try {
+      copyPomXml(project);
+    } catch (IOException e) {
+      throw new AssertionError(e);
+    }
     return project;
   }
 
-  public static Project tmpProjectWithBuildGradle() throws IOException {
+  public static Project tmpProjectWithBuildGradle() {
     Project project = tmpProject();
-    copyBuildGradle(project);
+    try {
+      copyBuildGradle(project);
+    } catch (IOException e) {
+      throw new AssertionError(e);
+    }
     return project;
   }
 

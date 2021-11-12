@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import tech.jhipster.forge.UnitTest;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
+import tech.jhipster.forge.generator.project.infrastructure.secondary.server.springboot.banner.BannerLocalRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)
@@ -22,7 +23,7 @@ class BannerDomainServiceTest {
   ProjectRepository projectRepository;
 
   @InjectMocks
-  BannerDomainService bannerDomainService;
+  BannerLocalRepository bannerDomainService;
 
   @Test
   void shouldAddBannerJHipsterV7() {

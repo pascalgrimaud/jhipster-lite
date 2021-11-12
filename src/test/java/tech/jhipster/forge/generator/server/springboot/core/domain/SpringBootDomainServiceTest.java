@@ -18,6 +18,7 @@ import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
+import tech.jhipster.forge.generator.project.infrastructure.secondary.server.springboot.core.SpringBootLocalRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)
@@ -29,11 +30,11 @@ class SpringBootDomainServiceTest {
   @Mock
   BuildToolRepository buildToolRepository;
 
-  SpringBootDomainService springBootDomainService;
+  SpringBootLocalRepository springBootDomainService;
 
   @BeforeEach
   void setUp() {
-    springBootDomainService = new SpringBootDomainService(projectRepository, buildToolRepository);
+    springBootDomainService = new SpringBootLocalRepository(projectRepository, buildToolRepository);
   }
 
   @Test

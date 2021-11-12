@@ -10,9 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolRepository;
+import tech.jhipster.forge.generator.project.application.LiquibaseApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
 import tech.jhipster.forge.generator.project.domain.model.Project;
-import tech.jhipster.forge.generator.server.springboot.core.domain.SpringBootService;
+import tech.jhipster.forge.generator.project.domain.service.server.springboot.core.SpringBootRepository;
 import tech.jhipster.forge.generator.server.springboot.database.postgresql.domain.PostgresqlService;
 
 @IntegrationTest
@@ -22,7 +23,7 @@ class LiquibaseApplicationServiceIT {
   BuildToolRepository buildToolRepository;
 
   @Autowired
-  SpringBootService springBootService;
+  SpringBootRepository springBootRepository;
 
   @Autowired
   PostgresqlService postgresqlService;
@@ -34,7 +35,7 @@ class LiquibaseApplicationServiceIT {
   void shouldInit() {
     Project project = tmpProjectBuilder().build();
     buildToolRepository.init(project, BuildToolType.MAVEN);
-    springBootService.init(project);
+    springBootRepository.init(project);
     postgresqlService.init(project);
 
     liquibaseApplicationService.init(project);

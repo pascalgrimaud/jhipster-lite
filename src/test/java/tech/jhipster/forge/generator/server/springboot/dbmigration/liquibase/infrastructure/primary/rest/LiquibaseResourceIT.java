@@ -19,10 +19,10 @@ import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
 import tech.jhipster.forge.generator.project.application.InitApplicationService;
 import tech.jhipster.forge.generator.project.application.MavenApplicationService;
+import tech.jhipster.forge.generator.project.application.PostgresqlApplicationService;
+import tech.jhipster.forge.generator.project.application.SpringBootApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.infrastructure.primary.dto.ProjectDTO;
-import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;
-import tech.jhipster.forge.generator.server.springboot.database.postgresql.application.PostgresqlApplicationService;
 
 @IntegrationTest
 @AutoConfigureMockMvc

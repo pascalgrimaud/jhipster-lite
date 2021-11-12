@@ -9,7 +9,7 @@ import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.getPathOf;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_RESOURCES;
-import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.APPLICATION_PROPERTIES;
+import static tech.jhipster.forge.generator.project.domain.service.server.springboot.core.SpringBoot.APPLICATION_PROPERTIES;
 
 import java.nio.file.Files;
 import org.junit.jupiter.api.Test;

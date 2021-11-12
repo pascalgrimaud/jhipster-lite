@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.server.springboot.banner.application;
+package tech.jhipster.forge.generator.project.infrastructure.secondary.server.springboot.banner;
 
 import static tech.jhipster.forge.TestUtils.assertFileExist;
 import static tech.jhipster.forge.TestUtils.tmpProject;
@@ -9,21 +9,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
-import tech.jhipster.forge.generator.project.application.BannerApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
-class BannerApplicationServiceIT {
+class BannerLocalRepositoryIT {
 
   @Autowired
-  BannerApplicationService bannerApplicationService;
+  BannerLocalRepository bannerLocalRepository;
 
   @Test
   @DisplayName("should add banner JHipster v7")
   void shouldAddBannerJHipsterV7() {
     Project project = tmpProject();
 
-    bannerApplicationService.addBannerJHipsterV7(project);
+    bannerLocalRepository.addBannerJHipsterV7(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
   }
@@ -33,7 +32,7 @@ class BannerApplicationServiceIT {
   void shouldAddBannerJHipsterV7React() {
     Project project = tmpProject();
 
-    bannerApplicationService.addBannerJHipsterV7React(project);
+    bannerLocalRepository.addBannerJHipsterV7React(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
   }
@@ -43,7 +42,7 @@ class BannerApplicationServiceIT {
   void shouldAddBannerJHipsterV7Vue() {
     Project project = tmpProject();
 
-    bannerApplicationService.addBannerJHipsterV7Vue(project);
+    bannerLocalRepository.addBannerJHipsterV7Vue(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
   }
@@ -53,7 +52,7 @@ class BannerApplicationServiceIT {
   void shouldAddBannerJHipsterV2() {
     Project project = tmpProject();
 
-    bannerApplicationService.addBannerJHipsterV2(project);
+    bannerLocalRepository.addBannerJHipsterV2(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
   }
@@ -63,7 +62,7 @@ class BannerApplicationServiceIT {
   void shouldAddBannerJHipsterV3() {
     Project project = tmpProject();
 
-    bannerApplicationService.addBannerJHipsterV3(project);
+    bannerLocalRepository.addBannerJHipsterV3(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
   }

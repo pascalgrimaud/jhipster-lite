@@ -4,7 +4,7 @@ import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.read;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_RESOURCES;
-import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.*;
+import static tech.jhipster.forge.generator.project.domain.service.server.springboot.core.SpringBoot.*;
 
 import java.io.IOException;
 import tech.jhipster.forge.common.domain.FileUtils;

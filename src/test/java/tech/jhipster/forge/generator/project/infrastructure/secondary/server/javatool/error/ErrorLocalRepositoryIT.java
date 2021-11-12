@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.server.javatool.error.application;
+package tech.jhipster.forge.generator.project.infrastructure.secondary.server.javatool.error;
 
 import static tech.jhipster.forge.TestUtils.*;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
@@ -7,20 +7,19 @@ import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.P
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
-import tech.jhipster.forge.generator.project.application.ErrorApplicationService;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
-class ErrorApplicationServiceIT {
+class ErrorLocalRepositoryIT {
 
   @Autowired
-  ErrorApplicationService errorApplicationService;
+  ErrorLocalRepository errorLocalRepository;
 
   @Test
   void shouldInit() {
     Project project = tmpProject();
 
-    errorApplicationService.init(project);
+    errorLocalRepository.init(project);
 
     String pathMain = "src/main/java/com/mycompany/myapp/error/domain";
     assertFileExist(project, getPath(pathMain, "Assert.java"));
@@ -38,7 +37,7 @@ class ErrorApplicationServiceIT {
     Project project = tmpProject();
     project.addConfig(PACKAGE_NAME, "tech.jhipster.chips");
 
-    errorApplicationService.init(project);
+    errorLocalRepository.init(project);
 
     String packageResult = "package tech.jhipster.chips.error.domain;";
 
