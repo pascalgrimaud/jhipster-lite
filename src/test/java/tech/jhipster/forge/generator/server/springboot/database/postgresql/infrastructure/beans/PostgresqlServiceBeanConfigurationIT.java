@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import tech.jhipster.forge.IntegrationTest;
-import tech.jhipster.forge.generator.server.springboot.database.postgresql.domain.PostgresqlDomainService;
+import tech.jhipster.forge.generator.project.infrastructure.secondary.server.springboot.database.PostgresqlDomainService;
 
 @IntegrationTest
 class PostgresqlServiceBeanConfigurationIT {

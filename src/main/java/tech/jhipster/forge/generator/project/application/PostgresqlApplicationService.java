@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.project.application;
 
 import org.springframework.stereotype.Service;
 import tech.jhipster.forge.generator.project.domain.model.Project;
-import tech.jhipster.forge.generator.server.springboot.database.postgresql.domain.PostgresqlService;
+import tech.jhipster.forge.generator.project.domain.service.server.springboot.database.postgresql.PostgresqlService;
 
 @Service
 public class PostgresqlApplicationService {

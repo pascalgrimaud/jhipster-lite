@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.server.springboot.database.postgresql.domain;
+package tech.jhipster.forge.generator.project.domain.service.server.springboot.database.postgresql;
 
 public class Postgresql {
 

@@ -14,7 +14,7 @@ import tech.jhipster.forge.generator.project.application.LiquibaseApplicationSer
 import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.domain.service.server.springboot.core.SpringBootRepository;
-import tech.jhipster.forge.generator.server.springboot.database.postgresql.domain.PostgresqlService;
+import tech.jhipster.forge.generator.project.domain.service.server.springboot.database.postgresql.PostgresqlService;
 
 @IntegrationTest
 class LiquibaseApplicationServiceIT {

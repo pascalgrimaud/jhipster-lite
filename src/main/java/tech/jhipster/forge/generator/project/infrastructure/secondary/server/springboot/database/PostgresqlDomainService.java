@@ -1,4 +1,4 @@
-package tech.jhipster.forge.generator.server.springboot.database.postgresql.domain;
+package tech.jhipster.forge.generator.project.infrastructure.secondary.server.springboot.database;
 
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_JAVA;
@@ -12,6 +12,8 @@ import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolRepositor
 import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.service.server.springboot.database.postgresql.Postgresql;
+import tech.jhipster.forge.generator.project.domain.service.server.springboot.database.postgresql.PostgresqlService;
 import tech.jhipster.forge.generator.server.springboot.properties.domain.SpringBootPropertiesService;
 
 public class PostgresqlDomainService implements PostgresqlService {

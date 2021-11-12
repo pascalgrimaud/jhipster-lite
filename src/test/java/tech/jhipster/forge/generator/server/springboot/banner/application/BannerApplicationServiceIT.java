@@ -1,9 +1,9 @@
 package tech.jhipster.forge.generator.server.springboot.banner.application;
 
-import static tech.jhipster.forge.TestUtils.assertFileExist;
-import static tech.jhipster.forge.TestUtils.tmpProject;
+import static tech.jhipster.forge.TestUtils.*;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.ServerFrameworkType.SPRING;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class BannerApplicationServiceIT {
   @Test
   @DisplayName("should add banner JHipster v7")
   void shouldAddBannerJHipsterV7() {
-    Project project = tmpProject();
+    Project project = springProject();
 
     bannerApplicationService.addBannerJHipsterV7(project);
 
@@ -31,7 +31,7 @@ class BannerApplicationServiceIT {
   @Test
   @DisplayName("should add banner JHipster v7 for React")
   void shouldAddBannerJHipsterV7React() {
-    Project project = tmpProject();
+    Project project = springProject();
 
     bannerApplicationService.addBannerJHipsterV7React(project);
 
@@ -41,7 +41,7 @@ class BannerApplicationServiceIT {
   @Test
   @DisplayName("should add banner JHipster v7 for Vue")
   void shouldAddBannerJHipsterV7Vue() {
-    Project project = tmpProject();
+    Project project = springProject();
 
     bannerApplicationService.addBannerJHipsterV7Vue(project);
 
@@ -51,7 +51,7 @@ class BannerApplicationServiceIT {
   @Test
   @DisplayName("should add banner JHipster v2")
   void shouldAddBannerJHipsterV2() {
-    Project project = tmpProject();
+    Project project = springProject();
 
     bannerApplicationService.addBannerJHipsterV2(project);
 
@@ -61,10 +61,14 @@ class BannerApplicationServiceIT {
   @Test
   @DisplayName("should add banner JHipster v3")
   void shouldAddBannerJHipsterV3() {
-    Project project = tmpProject();
+    Project project = springProject();
 
     bannerApplicationService.addBannerJHipsterV3(project);
 
     assertFileExist(project, getPath(MAIN_RESOURCES, "banner.txt"));
+  }
+
+  private Project springProject() {
+    return tmpProjectBuilder().server(SPRING).build();
   }
 }
