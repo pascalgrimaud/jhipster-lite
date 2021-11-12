@@ -3,9 +3,9 @@ package tech.jhipster.forge.generator.server.springboot.database.postgresql.appl
 import static tech.jhipster.forge.TestUtils.*;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService.POM_XML;
-import static tech.jhipster.forge.generator.project.domain.Constants.*;
-import static tech.jhipster.forge.generator.project.domain.DefaultConfig.BASE_NAME;
-import static tech.jhipster.forge.generator.project.domain.DefaultConfig.PACKAGE_NAME;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.*;
+import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.BASE_NAME;
+import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.PACKAGE_NAME;
 import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.APPLICATION_PROPERTIES;
 
 import java.util.List;
@@ -14,8 +14,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
-import tech.jhipster.forge.generator.init.application.InitApplicationService;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;
 
 @IntegrationTest

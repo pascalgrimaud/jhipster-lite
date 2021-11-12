@@ -7,7 +7,7 @@ import static tech.jhipster.forge.TestUtils.tmpProject;
 import org.junit.jupiter.api.Test;
 import tech.jhipster.forge.UnitTest;
 import tech.jhipster.forge.error.domain.MissingMandatoryValueException;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @UnitTest
 class ParentAddedTest {

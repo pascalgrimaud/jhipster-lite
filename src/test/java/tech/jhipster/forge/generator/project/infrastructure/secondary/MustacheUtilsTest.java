@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.project.infrastructure.secondary;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEST_TEMPLATE_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_TEMPLATE_RESOURCES;
 
 import com.github.mustachejava.MustacheNotFoundException;
 import java.util.Map;

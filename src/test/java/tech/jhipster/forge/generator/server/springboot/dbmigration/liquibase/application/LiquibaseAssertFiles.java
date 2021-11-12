@@ -2,9 +2,9 @@ package tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.ap
 
 import static tech.jhipster.forge.TestUtils.assertFileExist;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
-import static tech.jhipster.forge.generator.project.domain.Constants.*;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.*;
 
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public class LiquibaseAssertFiles {
 

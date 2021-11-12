@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
 import tech.jhipster.forge.generator.buildtool.generic.domain.PluginAdded;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
 class MavenPluginAddedListenerIT {

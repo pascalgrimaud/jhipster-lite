@@ -4,8 +4,8 @@ import java.util.List;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import tech.jhipster.forge.generator.buildtool.generic.domain.*;
-import tech.jhipster.forge.generator.project.domain.BuildToolType;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @Component
 public class BuildToolPublisher implements BuildToolRepository {

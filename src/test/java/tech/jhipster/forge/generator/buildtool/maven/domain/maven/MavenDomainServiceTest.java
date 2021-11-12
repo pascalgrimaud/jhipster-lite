@@ -21,8 +21,8 @@ import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
 import tech.jhipster.forge.generator.buildtool.maven.domain.MavenDomainService;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)

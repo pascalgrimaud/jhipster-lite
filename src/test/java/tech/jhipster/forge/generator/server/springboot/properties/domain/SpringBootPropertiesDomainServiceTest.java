@@ -7,8 +7,8 @@ import static org.mockito.Mockito.verify;
 import static tech.jhipster.forge.TestUtils.tmpProject;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.getPathOf;
-import static tech.jhipster.forge.generator.project.domain.Constants.MAIN_RESOURCES;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEST_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_RESOURCES;
 import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.APPLICATION_PROPERTIES;
 
 import java.nio.file.Files;
@@ -20,8 +20,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import tech.jhipster.forge.UnitTest;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)

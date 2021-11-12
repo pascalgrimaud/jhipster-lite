@@ -4,8 +4,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static tech.jhipster.forge.TestUtils.assertFileExist;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
-import static tech.jhipster.forge.generator.project.domain.Constants.MAIN_JAVA;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEST_JAVA;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_JAVA;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_JAVA;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ import tech.jhipster.forge.TestUtils;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
 import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
-import tech.jhipster.forge.generator.init.application.InitApplicationService;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.application.InitApplicationService;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.project.infrastructure.primary.dto.ProjectDTO;
 import tech.jhipster.forge.generator.server.springboot.core.application.SpringBootApplicationService;
 

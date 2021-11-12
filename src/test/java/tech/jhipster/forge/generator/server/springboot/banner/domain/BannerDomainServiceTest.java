@@ -1,6 +1,5 @@
 package tech.jhipster.forge.generator.server.springboot.banner.domain;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
@@ -11,10 +10,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import tech.jhipster.forge.UnitTest;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 @UnitTest
 @ExtendWith(MockitoExtension.class)

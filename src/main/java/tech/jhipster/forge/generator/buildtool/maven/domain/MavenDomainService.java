@@ -4,7 +4,7 @@ import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.read;
 import static tech.jhipster.forge.common.domain.WordUtils.indent;
 import static tech.jhipster.forge.generator.buildtool.maven.domain.Maven.*;
-import static tech.jhipster.forge.generator.project.domain.DefaultConfig.*;
+import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +14,8 @@ import tech.jhipster.forge.error.domain.GeneratorException;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
 import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 public class MavenDomainService implements MavenService {
 

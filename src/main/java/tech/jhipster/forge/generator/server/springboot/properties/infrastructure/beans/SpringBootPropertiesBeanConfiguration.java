@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.server.springboot.properties.infrastructur
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 import tech.jhipster.forge.generator.server.springboot.properties.domain.SpringBootPropertiesDomainService;
 import tech.jhipster.forge.generator.server.springboot.properties.domain.SpringBootPropertiesService;
 

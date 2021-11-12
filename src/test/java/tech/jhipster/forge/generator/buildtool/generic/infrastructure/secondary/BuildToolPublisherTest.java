@@ -15,8 +15,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import tech.jhipster.forge.UnitTest;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.generator.buildtool.generic.domain.*;
-import tech.jhipster.forge.generator.project.domain.BuildToolType;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @UnitTest
 @ExtendWith(SpringExtension.class)

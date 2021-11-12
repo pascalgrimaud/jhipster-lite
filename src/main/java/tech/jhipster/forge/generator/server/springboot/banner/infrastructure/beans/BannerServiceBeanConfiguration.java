@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.server.springboot.banner.infrastructure.be
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 import tech.jhipster.forge.generator.server.springboot.banner.domain.BannerDomainService;
 import tech.jhipster.forge.generator.server.springboot.banner.domain.BannerService;
 

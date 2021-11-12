@@ -1,6 +1,6 @@
 package tech.jhipster.forge.generator.server.springboot.database.postgresql.domain;
 
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public interface PostgresqlService {
   void init(Project project);

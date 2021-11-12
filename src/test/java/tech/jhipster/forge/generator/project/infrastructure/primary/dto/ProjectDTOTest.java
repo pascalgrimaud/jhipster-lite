@@ -2,13 +2,13 @@ package tech.jhipster.forge.generator.project.infrastructure.primary.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static tech.jhipster.forge.generator.project.domain.DefaultConfig.BASE_NAME;
+import static tech.jhipster.forge.generator.project.domain.model.DefaultConfig.BASE_NAME;
 
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import tech.jhipster.forge.UnitTest;
 import tech.jhipster.forge.error.domain.MissingMandatoryValueException;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @UnitTest
 class ProjectDTOTest {

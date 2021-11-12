@@ -1,9 +1,9 @@
 package tech.jhipster.forge.generator.server.springboot.banner.domain;
 
-import static tech.jhipster.forge.generator.project.domain.Constants.MAIN_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
 
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 public class BannerDomainService implements BannerService {
 

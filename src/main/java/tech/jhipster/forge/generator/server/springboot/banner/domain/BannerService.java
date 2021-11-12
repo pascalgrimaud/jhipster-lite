@@ -1,6 +1,6 @@
 package tech.jhipster.forge.generator.server.springboot.banner.domain;
 
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public interface BannerService {
   void addBannerJHipsterV7(Project project);

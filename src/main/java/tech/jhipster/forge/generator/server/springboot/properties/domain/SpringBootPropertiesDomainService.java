@@ -2,15 +2,15 @@ package tech.jhipster.forge.generator.server.springboot.properties.domain;
 
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.read;
-import static tech.jhipster.forge.generator.project.domain.Constants.MAIN_RESOURCES;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEST_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_RESOURCES;
 import static tech.jhipster.forge.generator.server.springboot.core.domain.SpringBoot.*;
 
 import java.io.IOException;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.GeneratorException;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 public class SpringBootPropertiesDomainService implements SpringBootPropertiesService {
 

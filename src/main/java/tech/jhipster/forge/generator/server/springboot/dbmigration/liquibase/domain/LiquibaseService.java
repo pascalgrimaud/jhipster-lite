@@ -1,6 +1,6 @@
 package tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.domain;
 
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public interface LiquibaseService {
   void init(Project project);

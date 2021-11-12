@@ -4,8 +4,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static tech.jhipster.forge.TestUtils.assertFileExist;
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
-import static tech.jhipster.forge.generator.project.domain.Constants.MAIN_JAVA;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEST_JAVA;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.MAIN_JAVA;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEST_JAVA;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

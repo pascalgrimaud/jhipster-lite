@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.buildtool.generic.domain;
 
 import java.util.List;
 import tech.jhipster.forge.error.domain.Assert;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public record DependencyAdded(Project project, Dependency dependency, List<Dependency> exclusions) {
   public DependencyAdded {

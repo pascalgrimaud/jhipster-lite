@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.buildtool.maven.application;
 
 import static tech.jhipster.forge.TestUtils.assertFileExist;
 
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public class MavenAssertFiles {
 

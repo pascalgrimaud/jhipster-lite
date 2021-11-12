@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.generator.buildtool.generic.domain.PropertyAdded;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
 class MavenPropertyAddedListenerIT {

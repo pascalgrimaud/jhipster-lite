@@ -1,7 +1,7 @@
 package tech.jhipster.forge.generator.server.springboot.banner.application;
 
 import org.springframework.stereotype.Component;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.server.springboot.banner.domain.BannerService;
 
 @Component

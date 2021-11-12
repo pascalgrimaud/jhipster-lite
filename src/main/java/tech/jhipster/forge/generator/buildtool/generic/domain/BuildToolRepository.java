@@ -1,7 +1,8 @@
 package tech.jhipster.forge.generator.buildtool.generic.domain;
 
 import java.util.List;
-import tech.jhipster.forge.generator.project.domain.*;
+import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 public interface BuildToolRepository {
   void addParent(Project project, Parent parent);

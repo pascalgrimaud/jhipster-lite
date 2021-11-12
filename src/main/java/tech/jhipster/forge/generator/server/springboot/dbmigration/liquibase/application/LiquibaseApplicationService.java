@@ -1,7 +1,7 @@
 package tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.application;
 
 import org.springframework.stereotype.Service;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 import tech.jhipster.forge.generator.server.springboot.dbmigration.liquibase.domain.LiquibaseService;
 
 @Service

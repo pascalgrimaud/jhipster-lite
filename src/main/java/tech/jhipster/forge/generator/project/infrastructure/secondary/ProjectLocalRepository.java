@@ -2,7 +2,7 @@ package tech.jhipster.forge.generator.project.infrastructure.secondary;
 
 import static tech.jhipster.forge.common.domain.FileUtils.getPath;
 import static tech.jhipster.forge.common.domain.FileUtils.getPathOf;
-import static tech.jhipster.forge.generator.project.domain.Constants.TEMPLATE_RESOURCES;
+import static tech.jhipster.forge.generator.project.domain.model.Constants.TEMPLATE_RESOURCES;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -15,8 +15,8 @@ import org.springframework.stereotype.Repository;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.error.domain.Assert;
 import tech.jhipster.forge.error.domain.GeneratorException;
-import tech.jhipster.forge.generator.project.domain.Project;
-import tech.jhipster.forge.generator.project.domain.ProjectRepository;
+import tech.jhipster.forge.generator.project.domain.model.Project;
+import tech.jhipster.forge.generator.project.domain.model.ProjectRepository;
 
 @Repository
 public class ProjectLocalRepository implements ProjectRepository {

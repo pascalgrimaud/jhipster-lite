@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Map;
 import tech.jhipster.forge.error.domain.Assert;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @ApiModel(value = "ProjectDTO", description = "Project DTO")
 public class ProjectDTO {

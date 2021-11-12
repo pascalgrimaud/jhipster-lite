@@ -9,8 +9,8 @@ import org.springframework.context.ApplicationEventPublisher;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolAdded;
-import tech.jhipster.forge.generator.project.domain.BuildToolType;
-import tech.jhipster.forge.generator.project.domain.Project;
+import tech.jhipster.forge.generator.project.domain.model.BuildToolType;
+import tech.jhipster.forge.generator.project.domain.model.Project;
 
 @IntegrationTest
 class MavenBuildToolAddedListenerIT {
