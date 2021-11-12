@@ -4,8 +4,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.stereotype.Component;
 import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolAdded;
-import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolType;
 import tech.jhipster.forge.generator.buildtool.maven.application.MavenApplicationService;
+import tech.jhipster.forge.generator.project.domain.BuildToolType;
 
 @Component
 public class MavenBuildToolAddedListener implements ApplicationListener<PayloadApplicationEvent<BuildToolAdded>> {

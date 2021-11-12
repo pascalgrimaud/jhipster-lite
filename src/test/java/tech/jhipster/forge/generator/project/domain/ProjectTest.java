@@ -2,8 +2,7 @@ package tech.jhipster.forge.generator.project.domain;
 
 import static org.assertj.core.api.Assertions.*;
 import static tech.jhipster.forge.TestUtils.*;
-import static tech.jhipster.forge.common.domain.FileUtils.getPath;
-import static tech.jhipster.forge.common.domain.FileUtils.tmpDirForTest;
+import static tech.jhipster.forge.common.domain.FileUtils.*;
 import static tech.jhipster.forge.generator.project.domain.DefaultConfig.*;
 
 import java.util.HashMap;
@@ -26,31 +25,49 @@ class ProjectTest {
 
     @Test
     void shouldBuildMinimalProject() {
-      String folder = FileUtils.tmpDir();
+      String folder = tmpDir();
+      Project project = minimalBuilder(folder).build();
 
-      Project project = Project.builder().folder(folder).build();
+      assertThat(project.getFolder()).isEqualTo(folder);
+      assertThat(project.getConfig()).isEmpty();
+
+      assertThat(project.getLanguage()).isEmpty();
+      assertThat(project.getBuildTool()).isEmpty();
+      assertThat(project.getServer()).isEmpty();
+      assertThat(project.getClient()).isEmpty();
+
+      assertThat(project.getDatabase()).isEmpty();
+      assertThat(project.getDatabaseMigration()).isEmpty();
+      assertThat(project.getCache()).isEmpty();
+      assertThat(project.getSecurity()).isEmpty();
+    }
+
+    @Test
+    void shouldBuildWithNullConfig() {
+      String folder = tmpDir();
+      Project project = minimalBuilder(folder).config(null).build();
 
       assertThat(project.getFolder()).isEqualTo(folder);
       assertThat(project.getConfig()).isEmpty();
     }
 
     @Test
-    void shouldBuildWithNullConfig() {
-      String path = FileUtils.tmpDirForTest();
-      Project project = Project.builder().folder(path).config(null).build();
-
-      assertThat(project.getFolder()).isEqualTo(path);
-      assertThat(project.getConfig()).isEqualTo(Map.of());
-    }
-
-    @Test
     void shouldBuildFullProject() {
-      String folder = FileUtils.tmpDir();
-
-      Project project = Project.builder().folder(folder).config(Map.of(PROJECT_NAME, "JHipster Forge")).build();
+      String folder = tmpDir();
+      Project project = fullBuilder(folder).config(Map.of(PROJECT_NAME, "JHipster Forge")).build();
 
       assertThat(project.getFolder()).isEqualTo(folder);
       assertThat(project.getConfig()).isEqualTo(Map.of(PROJECT_NAME, "JHipster Forge"));
+
+      assertThat(project.getLanguage()).contains(LanguageType.JAVA);
+      assertThat(project.getBuildTool()).contains(BuildToolType.MAVEN);
+      assertThat(project.getServer()).contains(ServerFrameworkType.SPRING);
+      assertThat(project.getClient()).contains(ClientFrameworkType.ANGULAR);
+
+      assertThat(project.getDatabase()).contains(DatabaseType.POSTGRESQL);
+      assertThat(project.getDatabaseMigration()).contains(DatabaseMigrationType.LIQUIBASE);
+      assertThat(project.getCache()).contains(CacheType.EHCACHE);
+      assertThat(project.getSecurity()).contains(SecurityType.JWT);
     }
 
     @Test
@@ -317,5 +334,21 @@ class ProjectTest {
   void shouldCheckBuildToolWithGradle() throws Exception {
     Project project = tmpProjectWithBuildGradle();
     assertThatCode(project::checkBuildTool).doesNotThrowAnyException();
+  }
+
+  private Project.ProjectBuilder minimalBuilder(String tmpFolder) {
+    return Project.builder().folder(tmpFolder);
+  }
+
+  private Project.ProjectBuilder fullBuilder(String tmpFolder) {
+    return minimalBuilder(tmpFolder)
+      .language(LanguageType.JAVA)
+      .buildTool(BuildToolType.MAVEN)
+      .server(ServerFrameworkType.SPRING)
+      .client(ClientFrameworkType.ANGULAR)
+      .database(DatabaseType.POSTGRESQL)
+      .databaseMigration(DatabaseMigrationType.LIQUIBASE)
+      .cache(CacheType.EHCACHE)
+      .security(SecurityType.JWT);
   }
 }

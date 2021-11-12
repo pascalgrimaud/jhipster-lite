@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import tech.jhipster.forge.IntegrationTest;
 import tech.jhipster.forge.common.domain.FileUtils;
 import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolAdded;
-import tech.jhipster.forge.generator.buildtool.generic.domain.BuildToolType;
+import tech.jhipster.forge.generator.project.domain.BuildToolType;
 import tech.jhipster.forge.generator.project.domain.Project;
 
 @IntegrationTest

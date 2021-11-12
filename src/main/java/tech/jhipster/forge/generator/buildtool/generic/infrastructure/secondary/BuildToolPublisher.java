@@ -4,9 +4,7 @@ import java.util.List;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import tech.jhipster.forge.generator.buildtool.generic.domain.*;
-import tech.jhipster.forge.generator.buildtool.generic.domain.Dependency;
-import tech.jhipster.forge.generator.buildtool.generic.domain.Parent;
-import tech.jhipster.forge.generator.buildtool.generic.domain.Plugin;
+import tech.jhipster.forge.generator.project.domain.BuildToolType;
 import tech.jhipster.forge.generator.project.domain.Project;
 
 @Component
