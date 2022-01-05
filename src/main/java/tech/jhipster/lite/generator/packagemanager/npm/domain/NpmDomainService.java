@@ -45,7 +45,22 @@ public class NpmDomainService implements NpmService {
 
   @Override
   public void addDevDependency(Project project, String dependency, String version) {
-    // Need to be implemented
+    project.addDefaultConfig(PRETTIER_DEFAULT_INDENT);
+    int indent = (Integer) project.getConfig(PRETTIER_DEFAULT_INDENT).orElse(2);
+
+    String needle = DEV_DEPENDENCIES + ": " + OB;
+    String newText = needle + System.lineSeparator() + indent(2, indent) + DQ + dependency + DQ + ": " + DQ + version + DQ;
+
+    String versionNeedle = VERSION;
+    if (!projectRepository.containsRegexp(project, "", PACKAGE_JSON, needle)) {
+      newText =
+        newText + System.lineSeparator() + indent(1, indent) + CB + "," + System.lineSeparator() + indent(1, indent) + versionNeedle;
+      projectRepository.replaceText(project, "", PACKAGE_JSON, versionNeedle, newText);
+    } else if (projectRepository.containsRegexp(project, "", PACKAGE_JSON, needle + CB)) {
+      projectRepository.replaceText(project, "", PACKAGE_JSON, needle, newText + System.lineSeparator() + indent(1, indent));
+    } else {
+      projectRepository.replaceText(project, "", PACKAGE_JSON, needle, newText + ",");
+    }
   }
 
   @Override

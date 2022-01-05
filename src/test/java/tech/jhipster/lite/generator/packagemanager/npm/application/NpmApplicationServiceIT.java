@@ -57,6 +57,40 @@ class NpmApplicationServiceIT {
   }
 
   @Test
+  void shouldAddDevDependencyWhenNoDevDependencyEntry() {
+    Project project = tmpProjectWithPackageJsonNothing();
+    String dependency = "husky";
+    String version = "7.0.4";
+
+    npmApplicationService.addDevDependency(project, dependency, version);
+
+    assertFileContent(project, PACKAGE_JSON, List.of("\"devDependencies\": {", "\"husky\": \"7.0.4\"", "},", "\"version\""));
+  }
+
+  @Test
+  void shouldAddDevDependencyWhenDevDependencyEmpty() {
+    Project project = tmpProjectWithPackageJsonEmpty();
+    String dependency = "husky";
+    String version = "7.0.4";
+
+    npmApplicationService.addDevDependency(project, dependency, version);
+
+    assertFileContent(project, PACKAGE_JSON, List.of("\"devDependencies\": {", "\"husky\": \"7.0.4\""));
+    assertFileNoContent(project, PACKAGE_JSON, List.of("\"devDependencies\": {", "\"husky\": \"7.0.4\","));
+  }
+
+  @Test
+  void shouldAddDevDependency() {
+    Project project = tmpProjectWithPackageJsonComplete();
+    String dependency = "husky";
+    String version = "7.0.4";
+
+    npmApplicationService.addDevDependency(project, dependency, version);
+
+    assertFileContent(project, PACKAGE_JSON, List.of("\"devDependencies\": {", "\"husky\": \"7.0.4\","));
+  }
+
+  @Test
   void shouldAddScriptWhenNoScriptEntry() {
     Project project = tmpProjectWithPackageJsonNothing();
     String name = "prepare";

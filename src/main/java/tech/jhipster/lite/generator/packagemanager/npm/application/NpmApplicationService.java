@@ -17,6 +17,10 @@ public class NpmApplicationService {
     this.npmService.addDependency(project, dependency, version);
   }
 
+  public void addDevDependency(Project project, String dependency, String version) {
+    this.npmService.addDevDependency(project, dependency, version);
+  }
+
   public void addScript(Project project, String name, String cmd) {
     this.npmService.addScript(project, name, cmd);
   }

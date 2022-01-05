@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {
-    "prettier": "2.5.1"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=14.18.1"
   },
