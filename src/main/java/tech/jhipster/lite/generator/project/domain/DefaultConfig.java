@@ -8,6 +8,7 @@ import java.util.Optional;
 public class DefaultConfig {
 
   public static final String BASE_NAME = "baseName";
+  public static final String DASHERIZED_BASE_NAME = "base-name";
   public static final String PROJECT_NAME = "projectName";
   public static final String PACKAGE_NAME = "packageName";
   public static final String PRETTIER_DEFAULT_INDENT = "prettierDefaultIndent";
