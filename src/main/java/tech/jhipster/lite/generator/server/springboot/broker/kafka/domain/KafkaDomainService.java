@@ -1,15 +1,15 @@
 package tech.jhipster.lite.generator.server.springboot.broker.kafka.domain;
 
+import static tech.jhipster.lite.generator.project.domain.DefaultConfig.BASE_NAME;
+import static tech.jhipster.lite.generator.project.domain.DefaultConfig.DASHERIZED_BASE_NAME;
+
+import java.util.TreeMap;
+import tech.jhipster.lite.error.domain.GeneratorException;
 import tech.jhipster.lite.generator.buildtool.generic.domain.BuildToolService;
 import tech.jhipster.lite.generator.buildtool.generic.domain.Dependency;
 import tech.jhipster.lite.generator.project.domain.Project;
 import tech.jhipster.lite.generator.project.domain.ProjectRepository;
 import tech.jhipster.lite.generator.server.springboot.common.domain.SpringBootCommonService;
-
-import java.util.TreeMap;
-
-import static tech.jhipster.lite.generator.project.domain.DefaultConfig.BASE_NAME;
-import static tech.jhipster.lite.generator.project.domain.DefaultConfig.DASHERIZED_BASE_NAME;
 
 public class KafkaDomainService implements KafkaService {
 
@@ -21,7 +21,11 @@ public class KafkaDomainService implements KafkaService {
 
   private final SpringBootCommonService springBootCommonService;
 
-  public KafkaDomainService(final BuildToolService buildToolService, final ProjectRepository projectRepository, final SpringBootCommonService springBootCommonService) {
+  public KafkaDomainService(
+    final BuildToolService buildToolService,
+    final ProjectRepository projectRepository,
+    final SpringBootCommonService springBootCommonService
+  ) {
     this.buildToolService = buildToolService;
     this.projectRepository = projectRepository;
     this.springBootCommonService = springBootCommonService;
@@ -33,6 +37,24 @@ public class KafkaDomainService implements KafkaService {
     addDockerCompose(project);
     addProperties(project);
     addTestcontainers(project);
+  }
+
+  @Override
+  public void addProducer(final Project project) {
+    projectRepository.template(
+      project,
+      SOURCE,
+      "KafkaProperties.java",
+      "src/main/" + project.getPackageNamePath() + "/config",
+      "KafkaProperties.java"
+    );
+    projectRepository.template(
+      project,
+      SOURCE,
+      "DummyProducer.java",
+      "src/main/" + project.getPackageNamePath() + "/service/kafka/producer",
+      "DummyProducer.java"
+    );
   }
 
   private void addApacheKafkaClient(final Project project) {
@@ -66,7 +88,22 @@ public class KafkaDomainService implements KafkaService {
   }
 
   private void addTestcontainers(final Project project) {
-    Dependency dependency = Dependency.builder().groupId("org.testcontainers").artifactId("kafka").build();
-    buildToolService.addDependency(project, dependency);
+    this.buildToolService.getVersion(project, "testcontainers")
+      .ifPresentOrElse(
+        version -> {
+          Dependency dependency = Dependency
+            .builder()
+            .groupId("org.testcontainers")
+            .artifactId("kafka")
+            .version("\\${testcontainers.version}")
+            .scope("test")
+            .build();
+          buildToolService.addProperty(project, "testcontainers.version", version);
+          buildToolService.addDependency(project, dependency);
+        },
+        () -> {
+          throw new GeneratorException("Testcontainers version not found");
+        }
+      );
   }
 }

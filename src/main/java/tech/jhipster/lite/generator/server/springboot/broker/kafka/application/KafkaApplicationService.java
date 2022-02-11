@@ -16,4 +16,8 @@ public class KafkaApplicationService {
   public void init(final Project project) {
     kafkaService.init(project);
   }
+
+  public void addProducer(final Project project) {
+    kafkaService.addProducer(project);
+  }
 }
