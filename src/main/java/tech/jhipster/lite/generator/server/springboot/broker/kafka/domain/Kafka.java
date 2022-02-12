@@ -6,8 +6,7 @@ public class Kafka {
 
   public static final String KAFKA_DOCKER_IMAGE = "confluentinc/cp-kafka:" + KAFKA_DOCKER_VERSION;
 
-  private Kafka() {
-  }
+  private Kafka() {}
 
   public static String getKafkaDockerImage() {
     return KAFKA_DOCKER_IMAGE;

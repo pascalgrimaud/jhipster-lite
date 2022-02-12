@@ -17,7 +17,11 @@ public class KafkaBeanConfiguration {
 
   public final SpringBootCommonService springBootCommonService;
 
-  public KafkaBeanConfiguration(final BuildToolService buildToolService, final ProjectRepository projectRepository, final SpringBootCommonService springBootCommonService) {
+  public KafkaBeanConfiguration(
+    final BuildToolService buildToolService,
+    final ProjectRepository projectRepository,
+    final SpringBootCommonService springBootCommonService
+  ) {
     this.buildToolService = buildToolService;
     this.projectRepository = projectRepository;
     this.springBootCommonService = springBootCommonService;
