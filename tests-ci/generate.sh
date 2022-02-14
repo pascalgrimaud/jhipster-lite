@@ -51,6 +51,9 @@ if [[ $filename == 'full-default' ]]; then
   callApi "/api/frontend-maven-plugin"
   callApi "/api/vite/vue"
 
+  callApi "/api/servers/spring-boot/brokers/kafka"
+  callApi "/api/servers/spring-boot/brokers/kafka/dummy-producer"
+
 elif [[ $filename == 'tomcat-mysql-ehcachexml' ]]; then
   callApi "/api/projects/init"
   callApi "/api/build-tools/maven"
