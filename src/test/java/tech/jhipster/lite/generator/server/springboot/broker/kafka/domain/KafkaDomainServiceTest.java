@@ -45,7 +45,7 @@ class KafkaDomainServiceTest {
 
     verify(buildToolService, times(2)).addDependency(any(Project.class), any(Dependency.class));
     verify(projectRepository).template(any(Project.class), anyString(), anyString(), anyString(), anyString());
-    verify(springBootCommonService, times(8)).addProperties(any(Project.class), anyString(), any());
+    verify(springBootCommonService, times(9)).addProperties(any(Project.class), anyString(), any());
   }
 
   @Test
@@ -54,6 +54,7 @@ class KafkaDomainServiceTest {
 
     kafkaDomainService.addDummyProducer(project);
 
+    verify(springBootCommonService).addProperties(any(Project.class), anyString(), any());
     verify(projectRepository, times(2)).template(any(Project.class), anyString(), anyString(), anyString());
   }
 

@@ -43,14 +43,22 @@ public class KafkaDomainService implements KafkaService {
 
   @Override
   public void addDummyProducer(final Project project) {
-    project.addDefaultConfig(PACKAGE_NAME);
-    project.addDefaultConfig(BASE_NAME);
-    String packageNamePath = project.getPackageNamePath().orElse(getPath(DefaultConfig.PACKAGE_PATH));
-    String kafkaPropertiesPath = "technical/infrastructure/secondary/kafka";
-    String dummyProducerPath = "dummy/infrastructure/secondary/producer";
+    springBootCommonService
+      .getProperty(project, "kafka.topic.dummy")
+      .orElseGet(() -> {
+        project.addDefaultConfig(PACKAGE_NAME);
+        project.addDefaultConfig(BASE_NAME);
+        String packageNamePath = project.getPackageNamePath().orElse(getPath(DefaultConfig.PACKAGE_PATH));
+        String kafkaPropertiesPath = "technical/infrastructure/secondary/kafka";
+        String dummyProducerPath = "dummy/infrastructure/secondary/producer";
 
-    projectRepository.template(project, SOURCE, "KafkaProperties.java", getPath(MAIN_JAVA, packageNamePath, kafkaPropertiesPath));
-    projectRepository.template(project, SOURCE, "DummyProducer.java", getPath(MAIN_JAVA, packageNamePath, dummyProducerPath));
+        String topicName = "queue." + project.getBaseName() + ".dummy";
+        springBootCommonService.addProperties(project, "kafka.topic.dummy", topicName);
+
+        projectRepository.template(project, SOURCE, "KafkaProperties.java", getPath(MAIN_JAVA, packageNamePath, kafkaPropertiesPath));
+        projectRepository.template(project, SOURCE, "DummyProducer.java", getPath(MAIN_JAVA, packageNamePath, dummyProducerPath));
+        return topicName;
+      });
   }
 
   private void addApacheKafkaClient(final Project project) {
@@ -80,6 +88,7 @@ public class KafkaDomainService implements KafkaService {
     result.put("kafka.consumer.auto.offset.reset", "earliest");
     result.put("kafka.producer.key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
     result.put("kafka.producer.value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+    result.put("kafka.polling.timeout", "10000");
 
     return result;
   }
