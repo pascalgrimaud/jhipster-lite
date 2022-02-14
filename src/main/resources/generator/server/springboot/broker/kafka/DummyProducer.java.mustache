@@ -21,7 +21,7 @@ public class DummyProducer {
 
     public DummyProducer(@Value("${kafka.topic.dummy}") final String topicName, final KafkaProperties kafkaProperties) {
         this.topicName = topicName;
-        this.kafkaProducer = new KafkaProducer<>(kafkaProperties.getProducer().get("Dummy");
+        this.kafkaProducer = new KafkaProducer<>(kafkaProperties.getProducer().get("Dummy"));
     }
 
     @PostConstruct
