@@ -76,14 +76,14 @@ class KafkaResourceIT {
 
     mockMvc
       .perform(
-        post("/api/servers/spring-boot/brokers/kafka/producers")
+        post("/api/servers/spring-boot/brokers/kafka/dummy-producer")
           .contentType(MediaType.APPLICATION_JSON)
           .content(TestUtils.convertObjectToJsonBytes(projectDTO))
       )
       .andExpect(status().isOk());
 
     String projectPath = projectDTO.getFolder();
-    assertFileExist(projectPath, "src/main/" + project.getPackageNamePath() + "/config/KafkaProperties.java");
-    assertFileExist(projectPath, "src/main/" + project.getPackageNamePath() + "/service/kafka/producer/DummyProducer.java");
+    assertFileExist(projectPath, "src/main/java/tech/jhipster/chips/technical/infrastructure/secondary/kafka/KafkaProperties.java");
+    assertFileExist(projectPath, "src/main/java/tech/jhipster/chips/dummy/infrastructure/secondary/producer/DummyProducer.java");
   }
 }
