@@ -22,7 +22,7 @@ import tech.jhipster.lite.generator.server.springboot.core.application.SpringBoo
 
 @IntegrationTest
 @AutoConfigureMockMvc
-public class KafkaResourceIT {
+class KafkaResourceIT {
 
   @Autowired
   InitApplicationService initApplicationService;

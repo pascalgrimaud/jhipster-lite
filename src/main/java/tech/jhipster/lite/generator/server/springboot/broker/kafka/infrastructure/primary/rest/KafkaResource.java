@@ -32,12 +32,12 @@ class KafkaResource {
     kafkaApplicationService.init(project);
   }
 
-  @Operation(summary = "Add a Kafka producer")
-  @ApiResponse(responseCode = "500", description = "An error occurred while adding a Kafka producer")
-  @PostMapping("/producers")
+  @Operation(summary = "Add a dummy Kafka producer")
+  @ApiResponse(responseCode = "500", description = "An error occurred while adding a dummy Kafka producer")
+  @PostMapping("/dummy-producer")
   @GeneratorStep(id = "springboot-kafka-producer")
-  public void addProducer(final @RequestBody ProjectDTO projectDTO) {
+  public void addDummyProducer(final @RequestBody ProjectDTO projectDTO) {
     Project project = ProjectDTO.toProject(projectDTO);
-    kafkaApplicationService.addProducer(project);
+    kafkaApplicationService.addDummyProducer(project);
   }
 }

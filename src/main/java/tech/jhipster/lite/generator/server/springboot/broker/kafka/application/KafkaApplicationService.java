@@ -17,7 +17,7 @@ public class KafkaApplicationService {
     kafkaService.init(project);
   }
 
-  public void addProducer(final Project project) {
-    kafkaService.addProducer(project);
+  public void addDummyProducer(final Project project) {
+    kafkaService.addDummyProducer(project);
   }
 }

@@ -1,12 +1,14 @@
 package tech.jhipster.lite.generator.server.springboot.broker.kafka.domain;
 
-import static tech.jhipster.lite.generator.project.domain.DefaultConfig.BASE_NAME;
-import static tech.jhipster.lite.generator.project.domain.DefaultConfig.DASHERIZED_BASE_NAME;
+import static tech.jhipster.lite.common.domain.FileUtils.getPath;
+import static tech.jhipster.lite.generator.project.domain.Constants.MAIN_JAVA;
+import static tech.jhipster.lite.generator.project.domain.DefaultConfig.*;
 
 import java.util.TreeMap;
 import tech.jhipster.lite.error.domain.GeneratorException;
 import tech.jhipster.lite.generator.buildtool.generic.domain.BuildToolService;
 import tech.jhipster.lite.generator.buildtool.generic.domain.Dependency;
+import tech.jhipster.lite.generator.project.domain.DefaultConfig;
 import tech.jhipster.lite.generator.project.domain.Project;
 import tech.jhipster.lite.generator.project.domain.ProjectRepository;
 import tech.jhipster.lite.generator.server.springboot.common.domain.SpringBootCommonService;
@@ -40,21 +42,15 @@ public class KafkaDomainService implements KafkaService {
   }
 
   @Override
-  public void addProducer(final Project project) {
-    projectRepository.template(
-      project,
-      SOURCE,
-      "KafkaProperties.java",
-      "src/main/" + project.getPackageNamePath() + "/config",
-      "KafkaProperties.java"
-    );
-    projectRepository.template(
-      project,
-      SOURCE,
-      "DummyProducer.java",
-      "src/main/" + project.getPackageNamePath() + "/service/kafka/producer",
-      "DummyProducer.java"
-    );
+  public void addDummyProducer(final Project project) {
+    project.addDefaultConfig(PACKAGE_NAME);
+    project.addDefaultConfig(BASE_NAME);
+    String packageNamePath = project.getPackageNamePath().orElse(getPath(DefaultConfig.PACKAGE_PATH));
+    String kafkaPropertiesPath = "technical/infrastructure/secondary/kafka";
+    String dummyProducerPath = "dummy/infrastructure/secondary/producer";
+
+    projectRepository.template(project, SOURCE, "KafkaProperties.java", getPath(MAIN_JAVA, packageNamePath, kafkaPropertiesPath));
+    projectRepository.template(project, SOURCE, "DummyProducer.java", getPath(MAIN_JAVA, packageNamePath, dummyProducerPath));
   }
 
   private void addApacheKafkaClient(final Project project) {
@@ -76,6 +72,7 @@ public class KafkaDomainService implements KafkaService {
   private TreeMap<String, Object> getKafkaCommonProperties() {
     TreeMap<String, Object> result = new TreeMap<>();
 
+    result.put("# Kafka Configuration", "");
     result.put("kafka.bootstrap-servers", "localhost:9092");
     result.put("kafka.consumer.key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
     result.put("kafka.consumer.value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -87,7 +84,7 @@ public class KafkaDomainService implements KafkaService {
     return result;
   }
 
-  private void addTestcontainers(final Project project) {
+  void addTestcontainers(final Project project) {
     this.buildToolService.getVersion(project, "testcontainers")
       .ifPresentOrElse(
         version -> {
