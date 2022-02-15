@@ -82,12 +82,12 @@ public class KafkaDomainService implements KafkaService {
 
     result.put("# Kafka Configuration", "");
     result.put("kafka.bootstrap-servers", "localhost:9092");
-    result.put("kafka.consumer.key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-    result.put("kafka.consumer.value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-    result.put("kafka.consumer.group.id", DASHERIZED_BASE_NAME);
-    result.put("kafka.consumer.auto.offset.reset", "earliest");
-    result.put("kafka.producer.key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-    result.put("kafka.producer.value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+    result.put("kafka.consumer.'[key.deserializer]", "org.apache.kafka.common.serialization.StringDeserializer");
+    result.put("kafka.consumer.'[value.deserializer]", "org.apache.kafka.common.serialization.StringDeserializer");
+    result.put("kafka.consumer.'[group.id]", DASHERIZED_BASE_NAME);
+    result.put("kafka.consumer.'[auto.offset.reset]", "earliest");
+    result.put("kafka.producer.'[key.serializer]'", "org.apache.kafka.common.serialization.StringSerializer");
+    result.put("kafka.producer.'[value.serializer]'", "org.apache.kafka.common.serialization.StringSerializer");
     result.put("kafka.polling.timeout", "10000");
 
     return result;

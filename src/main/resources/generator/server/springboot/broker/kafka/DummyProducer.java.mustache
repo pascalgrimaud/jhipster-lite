@@ -1,4 +1,4 @@
-package {{packageName}}.service.kafka.producer;
+package {{packageName}}.dummy.infrastructure.secondary.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 
-import {{packageName}}.config.KafkaProperties;
+import {{packageName}}.technical.infrastructure.secondary.kafka.KafkaProperties;
 
 @Service
 public class DummyProducer {
@@ -21,7 +21,7 @@ public class DummyProducer {
 
     public DummyProducer(@Value("${kafka.topic.dummy}") final String topicName, final KafkaProperties kafkaProperties) {
         this.topicName = topicName;
-        this.kafkaProducer = new KafkaProducer<>(kafkaProperties.getProducer().get("Dummy"));
+        this.kafkaProducer = new KafkaProducer<>(kafkaProperties.getProducer());
     }
 
     @PostConstruct

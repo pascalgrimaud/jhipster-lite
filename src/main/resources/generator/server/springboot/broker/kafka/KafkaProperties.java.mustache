@@ -1,4 +1,4 @@
-package {{packageName}}.config;
+package {{packageName}}.technical.infrastructure.secondary.kafka;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -19,23 +19,20 @@ public class KafkaProperties {
     @Value("${kafka.polling.timeout:10000}")
     private Integer pollingTimeout;
 
-    private Map<String, Map<String, Object>> producer = new HashMap<>();
+    private Map<String, Object> producer = new HashMap<>();
 
     @PostConstruct
     public void init() {
-        for (String producerKey : producer.keySet()) {
-            final Map<String, Object> properties = producer.get(producerKey);
-            if (!properties.containsKey(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG)) {
-                properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-            }
+        if (!producer.containsKey(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG)) {
+            producer.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         }
     }
 
-    public Map<String, Map<String, Object>> getProducer() {
+    public Map<String, Object> getProducer() {
         return this.producer;
     }
 
-    public void setProducer(Map<String, Map<String, Object>> producer) {
+    public void setProducer(Map<String, Object> producer) {
         this.producer = producer;
     }
 
