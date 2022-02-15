@@ -52,7 +52,7 @@ public class KafkaDomainService implements KafkaService {
         String kafkaPropertiesPath = "technical/infrastructure/secondary/kafka";
         String dummyProducerPath = "dummy/infrastructure/secondary/producer";
 
-        String topicName = "queue." + project.getBaseName() + ".dummy";
+        String topicName = "queue." + project.getBaseName().orElse("jhipster") + ".dummy";
         springBootCommonService.addProperties(project, "kafka.topic.dummy", topicName);
 
         projectRepository.template(project, SOURCE, "KafkaProperties.java", getPath(MAIN_JAVA, packageNamePath, kafkaPropertiesPath));
