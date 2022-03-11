@@ -4,7 +4,7 @@ runs:
   using: 'composite'
   steps:
     - name: 'Setup: Node.js'
-      uses: actions/setup-node@v2.5.0
+      uses: actions/setup-node@v3
       with:
         node-version: 16.14.0
     - name: 'Setup: update NPM'
