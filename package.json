@@ -35,7 +35,7 @@
     "vue-router": "4.0.14"
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "1.2.0",
+    "@prettier/plugin-xml": "2.0.1",
     "@rushstack/eslint-patch": "1.1.1",
     "@types/jest": "27.4.1",
     "@types/sinon": "10.0.11",
