@@ -227,8 +227,8 @@ public class FileUtils {
     Files.move(getPathOf(source, sourceFilename), getPathOf(source, destinationFilename));
   }
 
-  public static byte[] convertFileToByte(String path) throws IOException {
-    try (InputStream inputStream = new FileInputStream(path);) {
+  public static byte[] convertFileInTmpToByte(String path) throws IOException {
+    try (InputStream inputStream = new FileInputStream(getPath(tmpDir(), path))) {
       return inputStream.readAllBytes();
     }
   }

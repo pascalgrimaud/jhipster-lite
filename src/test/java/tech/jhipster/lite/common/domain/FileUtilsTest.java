@@ -753,11 +753,10 @@ class FileUtilsTest {
   }
 
   @Test
-  void shouldConvertFileToByte() throws IOException {
-    String folder = tmpDirForTest();
-    createFolder(folder);
-    Files.createFile(Paths.get(folder, "hello.world"));
+  void shouldConvertFileInTmpToByte() throws IOException {
+    String filename = "hello.world";
+    Files.createFile(Paths.get(tmpDir(), filename));
 
-    assertThat(FileUtils.convertFileToByte(folder + "/hello.world")).isNotNull();
+    assertThat(FileUtils.convertFileInTmpToByte(filename)).isNotNull();
   }
 }

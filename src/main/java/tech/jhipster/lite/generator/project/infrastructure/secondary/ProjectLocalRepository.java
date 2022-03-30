@@ -1,7 +1,6 @@
 package tech.jhipster.lite.generator.project.infrastructure.secondary;
 
-import static tech.jhipster.lite.common.domain.FileUtils.getPath;
-import static tech.jhipster.lite.common.domain.FileUtils.read;
+import static tech.jhipster.lite.common.domain.FileUtils.*;
 import static tech.jhipster.lite.generator.project.domain.Constants.TEMPLATE_FOLDER;
 
 import java.io.*;
@@ -202,10 +201,12 @@ public class ProjectLocalRepository implements ProjectRepository {
   }
 
   @Override
-  public void zip(Project project) {
+  public String zip(Project project) {
     File workingDir = new File(project.getFolder());
+    String filename = workingDir.getName() + ".zip";
     try {
-      ZipUtil.pack(workingDir, new File(workingDir + ".zip"));
+      ZipUtil.pack(workingDir, new File(tmpDir() + "/" + filename));
+      return filename;
     } catch (ZipException e) {
       throw new GeneratorException("Error when zipping " + project.getFolder(), e);
     }
@@ -213,9 +214,9 @@ public class ProjectLocalRepository implements ProjectRepository {
 
   @Override
   public byte[] download(Project project) {
-    zip(project);
+    String filename = zip(project);
     try {
-      return FileUtils.convertFileToByte(project.getFolder() + ".zip");
+      return FileUtils.convertFileInTmpToByte(filename);
     } catch (IOException ioe) {
       throw new GeneratorException("Error when creating ", ioe);
     }

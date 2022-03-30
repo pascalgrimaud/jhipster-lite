@@ -2,8 +2,7 @@ package tech.jhipster.lite.generator.project.infrastructure.secondary;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.never;
 import static tech.jhipster.lite.TestUtils.*;
 import static tech.jhipster.lite.common.domain.FileUtils.*;
@@ -22,10 +21,11 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import org.eclipse.jgit.api.errors.InvalidConfigurationException;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -396,8 +396,10 @@ class ProjectLocalRepositoryTest {
   @Test
   void shouldZip() {
     Project project = tmpProjectWithPomXml();
-    repository.zip(project);
-    assertFileExist(project.getFolder() + ".zip");
+
+    String result = repository.zip(project);
+
+    assertFileExist(getPath(tmpDir(), result));
   }
 
   @Test
@@ -416,7 +418,8 @@ class ProjectLocalRepositoryTest {
   void shouldNotDownload() {
     Project project = tmpProjectWithPomXml();
     try (MockedStatic<FileUtils> fileUtils = Mockito.mockStatic(FileUtils.class)) {
-      fileUtils.when(() -> FileUtils.convertFileToByte(anyString())).thenThrow(new IOException());
+      fileUtils.when(FileUtils::tmpDir).thenCallRealMethod();
+      fileUtils.when(() -> FileUtils.convertFileInTmpToByte(anyString())).thenThrow(new IOException());
 
       assertThatThrownBy(() -> repository.download(project)).isExactlyInstanceOf(GeneratorException.class);
     }
