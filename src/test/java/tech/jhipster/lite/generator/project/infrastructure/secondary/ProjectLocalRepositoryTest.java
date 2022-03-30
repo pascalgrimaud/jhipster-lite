@@ -419,6 +419,7 @@ class ProjectLocalRepositoryTest {
     Project project = tmpProjectWithPomXml();
     try (MockedStatic<FileUtils> fileUtils = Mockito.mockStatic(FileUtils.class)) {
       fileUtils.when(FileUtils::tmpDir).thenCallRealMethod();
+      fileUtils.when(() -> FileUtils.getPath(anyString())).thenCallRealMethod();
       fileUtils.when(() -> FileUtils.convertFileInTmpToByte(anyString())).thenThrow(new IOException());
 
       assertThatThrownBy(() -> repository.download(project)).isExactlyInstanceOf(GeneratorException.class);

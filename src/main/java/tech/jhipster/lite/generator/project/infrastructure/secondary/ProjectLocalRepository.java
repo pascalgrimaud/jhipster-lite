@@ -205,7 +205,7 @@ public class ProjectLocalRepository implements ProjectRepository {
     File workingDir = new File(project.getFolder());
     String filename = workingDir.getName() + ".zip";
     try {
-      ZipUtil.pack(workingDir, new File(tmpDir() + "/" + filename));
+      ZipUtil.pack(workingDir, new File(getPath(tmpDir(), filename)));
       return filename;
     } catch (ZipException e) {
       throw new GeneratorException("Error when zipping " + project.getFolder(), e);
