@@ -10,7 +10,7 @@ import VueRepository from '@/springboot/secondary/client/VueRepository';
 import SpringBootRepository from './springboot/secondary/SpringBootRepository';
 import ConsoleLogger from '@/common/secondary/ConsoleLogger';
 
-const axiosHttp = new AxiosHttp(axios.create({ baseURL: 'http://localhost:7471' }));
+const axiosHttp = new AxiosHttp(axios.create({ baseURL: '' }));
 const consoleLogger = new ConsoleLogger(console);
 const projectRepository = new ProjectRepository(axiosHttp);
 const angularRepository = new AngularRepository(axiosHttp);
