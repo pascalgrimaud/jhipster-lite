@@ -7,6 +7,10 @@
       "description": "Java runtime options.",
       "value": "-Dfile.encoding=UTF-8"
     },
+    "PORT": {
+      "description": "Port on which you want to run application",
+      "value": "7471"
+    },
     "JHIPSTER_LITE_VERSION": {
       "description": "Version of the JHipster Lite to deploy.",
       "value": "0.0.15"
