@@ -12,5 +12,5 @@
       "value": "0.0.15"
     }
   },
-  "buildpacks": [{ "url": "heroku/jvm" }, { "url": "https://github.com/jhipster/jhipster-lite-heroku-buildpack" }]
+  "buildpacks": [{ "url": "heroku/jvm" }, { "url": "https://github.com/pascalgrimaud/jhipster-lite-heroku-buildpack" }]
 }
