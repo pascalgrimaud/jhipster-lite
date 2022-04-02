@@ -13,10 +13,10 @@
         <q-btn flat round dense icon="fa-brands fa-github" class="q-mr-xs" />
         <!-- waiting for Dark Plugin integration
         <q-separator vertical color="white" inset />
-        <q-toggle 
-        v-model="theme" 
-        checked-icon="nightlight_round" 
-        unchecked-icon="light_mode" 
+        <q-toggle
+        v-model="theme"
+        checked-icon="nightlight_round"
+        unchecked-icon="light_mode"
         label="Dark theme" />
         -->
       </q-toolbar>
@@ -34,11 +34,11 @@
               <q-separator color="secondary" insert />
 
               <q-card-section>
-                <q-input v-model="text" id="path" label="Path (required)" />
-                <q-input v-model="text" id="basename" label="Base name" />
-                <q-input v-model="text" id="projectname" label="Project name" />
-                <q-input v-model="text" id="packagename" label="Package name" />
-                <q-input v-model="text" id="serverport" label="Server port" />
+                <q-input v-model="project.folder" id="path" label="Path (required)" />
+                <q-input v-model="project.baseName" id="basename" label="Base name" />
+                <q-input v-model="project.projectName" id="projectname" label="Project name" />
+                <q-input v-model="project.packageName" id="packagename" label="Package name" />
+                <q-input v-model="project.serverPort" id="serverport" label="Server port" />
               </q-card-section>
             </q-card>
           </div>
@@ -260,7 +260,19 @@
                         </q-item-section>
                         <q-item-section top side>
                           <div class="text-grey-8 q-gutter-xs">
-                            <q-btn id="init" class="glossy" align="between" size="md" color="primary" icon="engineering"> Generate </q-btn>
+                            <q-btn
+                              id="init"
+                              ref="init"
+                              name="init"
+                              @click="initProject"
+                              class="glossy"
+                              align="between"
+                              size="md"
+                              color="primary"
+                              icon="engineering"
+                            >
+                              Generate
+                            </q-btn>
                           </div>
                         </q-item-section>
                       </q-item>

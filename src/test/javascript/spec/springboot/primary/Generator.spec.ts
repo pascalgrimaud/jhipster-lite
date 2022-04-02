@@ -75,7 +75,8 @@ describe('Generator', () => {
     projectService.init.resolves({});
     await wrap({ projectService });
 
-    const initButton = wrapper.find('#init');
+    const initButton = wrapper.find({ ref: 'init' });
+    expect(initButton.exists()).toBe(true);
     await initButton.trigger('click');
 
     expect(projectService.init.called).toBe(false);
