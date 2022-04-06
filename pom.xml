@@ -44,7 +44,7 @@
     <mockito.version>4.4.0</mockito.version>
     <compiler-plugin.version>3.10.1</compiler-plugin.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <jacoco.version>0.8.7</jacoco.version>
+    <jacoco.version>0.8.8</jacoco.version>
     <mustache.version>0.9.10</mustache.version>
     <guava.version>31.1-jre</guava.version>
     <jgit.version>6.1.0.202203080745-r</jgit.version>
