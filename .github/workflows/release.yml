@@ -33,7 +33,7 @@ jobs:
           chmod +x mvnw
           ./mvnw clean verify
       - name: 'Artifact: upload JAR'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jhlite-jar
           path: '${{ github.workspace }}/target/*.jar'
