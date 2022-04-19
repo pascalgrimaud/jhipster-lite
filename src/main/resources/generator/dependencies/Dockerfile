@@ -7,6 +7,6 @@ FROM mariadb:10.8.2
 FROM mongo:5.0.7
 FROM mysql:8.0.28
 FROM postgres:14.2
-FROM confluentinc/cp-zookeeper:7.1.0
+FROM confluentinc/cp-zookeeper:7.1.1
 FROM confluentinc/cp-kafka:7.1.0
 FROM tchiotludo/akhq:0.20.0
