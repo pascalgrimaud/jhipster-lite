@@ -30,7 +30,7 @@
     "test:watch": "npm run jest -- --watch"
   },
   "dependencies": {
-    "axios": "0.26.1",
+    "axios": "0.27.1",
     "bootstrap": "5.1.3",
     "bootstrap-icons": "1.8.1",
     "pinia": "2.0.13",
