@@ -13,7 +13,7 @@
     "@testing-library/svelte": "3.1.1",
     "@types/jest": "27.4.1",
     "@typescript-eslint/eslint-plugin": "5.19.0",
-    "@typescript-eslint/parser": "5.19.0",
+    "@typescript-eslint/parser": "5.21.0",
     "babel-jest": "27.5.1",
     "babel-plugin-transform-vite-meta-env": "1.0.3",
     "eslint": "8.13.0",
