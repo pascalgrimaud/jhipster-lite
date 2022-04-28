@@ -5,7 +5,7 @@ FROM jhipster/jhipster-registry:v7.3.0
 FROM jboss/keycloak:16.1.1
 FROM mariadb:10.8.2
 FROM mongo:5.0.7
-FROM mysql:8.0.28
+FROM mysql:8.0.29
 FROM postgres:14.2
 FROM confluentinc/cp-zookeeper:7.1.0
 FROM confluentinc/cp-kafka:7.1.0
