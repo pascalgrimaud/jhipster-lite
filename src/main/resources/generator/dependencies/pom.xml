@@ -19,7 +19,7 @@
     <spring-boot.version>2.6.7</spring-boot.version>
     <spring-cloud.version>2021.0.0</spring-cloud.version>
     <spring-cloud-netflix-eureka-client.version>3.1.2</spring-cloud-netflix-eureka-client.version>
-    <springdoc-openapi.version>1.6.8</springdoc-openapi.version>
+    <springdoc-openapi.version>1.6.9</springdoc-openapi.version>
     <testcontainers.version>1.16.2</testcontainers.version>
     <node.version>v16.15.0</node.version>
     <npm.version>8.5.0</npm.version>
