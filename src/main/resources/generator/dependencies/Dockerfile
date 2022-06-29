@@ -11,4 +11,4 @@ FROM postgres:14.3
 FROM confluentinc/cp-zookeeper:7.1.1
 FROM confluentinc/cp-kafka:7.1.1
 FROM tchiotludo/akhq:0.21.0
-FROM apachepulsar/pulsar:2.10.0
+FROM apachepulsar/pulsar:2.10.1
