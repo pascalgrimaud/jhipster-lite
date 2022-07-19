@@ -42,7 +42,7 @@
   "devDependencies": {
     "@prettier/plugin-xml": "2.2.0",
     "@rushstack/eslint-patch": "1.1.4",
-    "@types/bootstrap": "5.1.12",
+    "@types/bootstrap": "5.1.13",
     "@types/jest": "27.5.0",
     "@types/sinon": "10.0.12",
     "@typescript-eslint/parser": "5.30.5",
