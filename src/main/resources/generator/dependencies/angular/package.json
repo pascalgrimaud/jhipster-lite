@@ -10,7 +10,7 @@
     "@angular/platform-browser": "14.0.5",
     "@angular/platform-browser-dynamic": "14.0.5",
     "@angular/router": "14.0.5",
-    "keycloak-js": "18.0.1",
+    "keycloak-js": "19.0.0",
     "ngx-webstorage": "10.0.1",
     "rxjs": "7.5.5",
     "tslib": "2.4.0",
