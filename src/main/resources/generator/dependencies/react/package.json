@@ -4,7 +4,7 @@
   "description": "JHipster Lite : used for Vite+React dependencies",
   "license": "Apache-2.0",
   "dependencies": {
-    "@nextui-org/react": "1.0.0-beta.9",
+    "@nextui-org/react": "1.0.0-beta.10",
     "axios": "0.27.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
