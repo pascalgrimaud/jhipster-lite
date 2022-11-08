@@ -15,7 +15,7 @@
     "@rushstack/eslint-patch": "1.2.0",
     "@types/jest": "29.0.3",
     "@types/sinon": "10.0.13",
-    "@typescript-eslint/parser": "5.38.0",
+    "@typescript-eslint/parser": "5.42.1",
     "@vitejs/plugin-vue": "3.1.0",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "10.0.0",
