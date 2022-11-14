@@ -7,7 +7,7 @@ FROM mariadb:10.9.3
 FROM mongo:5.0.11
 FROM mysql:8.0.30
 FROM mcr.microsoft.com/mssql/server:2017-latest
-FROM postgres:14.5
+FROM postgres:15.1
 FROM confluentinc/cp-zookeeper:7.2.1
 FROM confluentinc/cp-kafka:7.2.1
 FROM tchiotludo/akhq:0.22.0
