@@ -1,5 +1,5 @@
 FROM sonarqube:9.6.1-community
-FROM consul:1.13.2
+FROM consul:1.14.2
 FROM jhipster/consul-config-loader:v0.4.1
 FROM jhipster/jhipster-registry:v7.4.0
 FROM quay.io/keycloak/keycloak:19.0.2
