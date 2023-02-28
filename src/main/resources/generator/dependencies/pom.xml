@@ -39,7 +39,7 @@
     <testng.version>7.7.1</testng.version>
     <pulsar.version>2.10.0</pulsar.version>
     <liquibase.version>4.19.0</liquibase.version>
-    <compiler-plugin.version>3.10.1</compiler-plugin.version>
+    <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <surefire-plugin.version>3.0.0-M9</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
     <jacoco.version>0.8.8</jacoco.version>
