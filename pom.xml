@@ -70,7 +70,7 @@
     <properties-maven-plugin.version>1.1.0</properties-maven-plugin.version>
     <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
     <apache-commons-io.version>2.11.0</apache-commons-io.version>
-    <cucumber.version>7.11.1</cucumber.version>
+    <cucumber.version>7.11.2</cucumber.version>
     <testng.version>7.7.1</testng.version>
     <maven-model.version>3.9.0</maven-model.version>
     <joox.version>2.0.0</joox.version>
