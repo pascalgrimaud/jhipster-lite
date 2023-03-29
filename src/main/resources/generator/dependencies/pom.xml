@@ -20,7 +20,7 @@
     <logstash-logback-encoder.version>7.3</logstash-logback-encoder.version>
     <spring-boot.version>3.0.3</spring-boot.version>
     <spring-cloud.version>2022.0.0</spring-cloud.version>
-    <spring-cloud-netflix-eureka-client.version>4.0.0</spring-cloud-netflix-eureka-client.version>
+    <spring-cloud-netflix-eureka-client.version>4.0.1</spring-cloud-netflix-eureka-client.version>
     <springdoc-openapi-starter-webmvc.version>2.0.2</springdoc-openapi-starter-webmvc.version>
     <springdoc-openapi-starter-webflux.version>2.0.2</springdoc-openapi-starter-webflux.version>
     <testcontainers.version>1.17.6</testcontainers.version>
