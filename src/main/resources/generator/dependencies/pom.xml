@@ -21,7 +21,7 @@
     <spring-boot.version>3.0.3</spring-boot.version>
     <spring-cloud.version>2022.0.0</spring-cloud.version>
     <spring-cloud-netflix-eureka-client.version>4.0.0</spring-cloud-netflix-eureka-client.version>
-    <springdoc-openapi-starter-webmvc.version>2.0.2</springdoc-openapi-starter-webmvc.version>
+    <springdoc-openapi-starter-webmvc.version>2.1.0</springdoc-openapi-starter-webmvc.version>
     <springdoc-openapi-starter-webflux.version>2.0.2</springdoc-openapi-starter-webflux.version>
     <testcontainers.version>1.17.6</testcontainers.version>
     <kafka-clients.version>3.2.0</kafka-clients.version>
