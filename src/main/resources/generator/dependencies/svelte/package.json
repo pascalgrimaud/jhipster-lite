@@ -6,7 +6,7 @@
     "svelte-navigator": "3.2.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.20.2",
+    "@babel/preset-env": "7.21.5",
     "@sveltejs/adapter-static": "2.0.1",
     "@sveltejs/kit": "1.9.1",
     "@testing-library/svelte": "3.2.2",
