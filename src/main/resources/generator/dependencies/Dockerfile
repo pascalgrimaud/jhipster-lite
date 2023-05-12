@@ -8,7 +8,7 @@ FROM mongo:5.0.11
 FROM mysql:8.0.32
 FROM cassandra:4.1.0
 FROM mcr.microsoft.com/mssql/server:2017-latest
-FROM postgres:15.2
+FROM postgres:15.3
 FROM confluentinc/cp-zookeeper:7.3.2
 FROM confluentinc/cp-kafka:7.3.2
 FROM tchiotludo/akhq:0.23.0
