@@ -18,7 +18,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "husky": "8.0.3",
     "jasmine-core": "5.1.0",
-    "jest": "29.6.3",
+    "jest": "29.6.4",
     "lint-staged": "14.0.1",
     "node": "18.17.1",
     "npm": "9.8.1",
