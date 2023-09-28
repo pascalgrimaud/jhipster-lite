@@ -75,7 +75,7 @@
     "prettier-plugin-java": "2.3.0",
     "prettier-plugin-packagejson": "2.4.5",
     "pug-lint": "2.7.0",
-    "rimraf": "5.0.1",
+    "rimraf": "5.0.5",
     "sass": "1.66.1",
     "sinon": "15.2.0",
     "stylelint": "15.10.3",
