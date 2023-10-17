@@ -41,7 +41,7 @@
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <surefire-plugin.version>3.1.2</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M5</failsafe-plugin.version>
-    <jacoco.version>0.8.10</jacoco.version>
+    <jacoco.version>0.8.11</jacoco.version>
     <reflections.version>0.10.2</reflections.version>
     <json-web-token.version>0.11.5</json-web-token.version>
     <jhlite.version>0.41.0</jhlite.version>
