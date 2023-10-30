@@ -5,7 +5,7 @@ FROM jhipster/jhipster-registry:v7.4.0
 FROM quay.io/keycloak/keycloak:22.0.1
 FROM mariadb:11.0.3
 FROM mongo:7.0.0
-FROM mysql:8.1.0
+FROM mysql:8.2.0
 FROM cassandra:4.1.3
 FROM mcr.microsoft.com/mssql/server:2017-latest
 FROM postgres:15.4
