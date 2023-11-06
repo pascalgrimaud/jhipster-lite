@@ -23,7 +23,7 @@
     "@vitejs/plugin-react": "4.0.4",
     "@vitest/coverage-istanbul": "0.34.2",
     "autoprefixer": "10.4.15",
-    "eslint": "8.47.0",
+    "eslint": "8.53.0",
     "eslint-plugin-react": "7.33.2",
     "jsdom": "22.1.0",
     "postcss": "8.4.28",
