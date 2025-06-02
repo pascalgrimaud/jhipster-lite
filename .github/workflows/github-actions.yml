@@ -464,6 +464,7 @@ jobs:
         if: steps.tests-requirement-check.outputs.execute_tests == 'true'
         working-directory: /tmp/jhlite/${{ matrix.app }}/
         run: |
+          SONAR_TOKEN=$(docker logs sonar-token)
           if [ -f 'mvnw' ]; then
             ./mvnw clean verify -Dsonar.qualitygate.wait=true sonar:sonar
           elif [ -f 'gradlew' ]; then
